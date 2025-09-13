@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saltboy's MTG Card Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="search-page">
+  <main>
+    <h1>Saltboy's MTG Card Search</h1>
+    <h2>A Useful Card Search Tool</h2>
+
+    <section aria-labelledby="search-heading">
+      <h3 id="search-heading" class="visually-hidden">Search MTG Cards</h3>
+      <form action="results.html" method="GET" aria-label="Search for Magic cards">
+        <label for="searchBox" class="visually-hidden">Enter a card name:</label>
+        <input 
+          type="text" 
+          id="searchBox" 
+          name="q" 
+          required 
+          placeholder="Search for a card..." 
+          aria-required="true"
+        >
+        <button type="submit">Search</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

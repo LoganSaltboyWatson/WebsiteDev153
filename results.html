@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="results-page">
+  <header>
+    <nav class="back-link">
+      <a href="index.html">Back to search</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Search Results</h1>
+    <section id="results" class="cards" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <nav class="back-link">
+      <a href="index.html">Back to search</a>
+    </nav>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q");
+
+    async function fetchResults() {
+      if (!query) return;
+
+      const url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+
+      if (data.data) {
+        data.data.forEach(card => {
+          const imgSrc = card.image_uris?.normal || card.card_faces?.[0]?.image_uris?.normal;
+
+          const article = document.createElement("article");
+          article.className = "card";
+          article.innerHTML = `
+            <img src="${imgSrc}" alt="Card image for ${card.name}">
+            <h2>${card.name}</h2>
+          `;
+          resultsDiv.appendChild(article);
+        });
+      } else {
+        resultsDiv.innerHTML = "<p>No Wizard Has Explored This Far...</p>";
+      }
+    }
+
+    fetchResults();
+  </script>
+</body>
+</html>
+
