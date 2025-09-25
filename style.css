@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #ffcc00;
+}
+
+a {
+  color: #66ccff;
+}
+
+a:focus {
+  outline: 2px solid #ffcc00;
+  outline-offset: 3px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background: #e6b800;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body.search-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+body.search-page main {
+  max-width: 600px;
+}
+
+body.search-page form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+body.search-page input[type="text"] {
+  padding: 12px;
+  width: 300px;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  background: #111;
+  color: #fff;
+  font-size: 1em;
+}
+
+body.search-page input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+body.results-page {
+  padding: 20px;
+}
+
+body.results-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body.results-page .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body.results-page .card {
+  text-align: center;
+}
+
+body.results-page .card img {
+  width: 100%;
+  max-width: 223px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.results-page .back-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+body.results-page .back-link a {
+  text-decoration: none;
+}
+
+body.results-page .back-link a:hover {
+  text-decoration: underline;
+}
+.highlight-link {
+  color: #66ccff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.highlight-link:hover,
+.highlight-link:focus {
+  color: #99e6ff;
+  text-decoration: none;
+}
